@@ -1,15 +1,12 @@
 const bodyInHTML = document.querySelector("body");
-const IMG_NUMBER = 4;
+const IMG_NUMBER = 3;
 
 function paintImg(imgNumber){
-    //const image = new Image();
-    bodyInHTML.style.backgroundImage = `url(./images/land${imgNumber}.jpg)`;
+    const image = new Image();
+    image.src=`./images/land${imgNumber}.jpg`;
 
-    // image.classList.add("bgImage");
-    // image.style.backgroundAttachment="fixed";
-
-    // bodyInHTML.appendChild(image);
-    
+    image.classList.add("bgImage");
+    bodyInHTML.appendChild(image);
 }
 
 function genRandom(){

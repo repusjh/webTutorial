@@ -28,6 +28,12 @@ function paintTodo(text){
 
     delBtn.innerText = "X";
     delBtn.addEventListener("click", deleteTodo);
+    delBtn.addEventListener("mouseenter", function(){
+        delBtn.style.opacity = "1";
+    })
+    delBtn.addEventListener("mouseout", function(){
+        delBtn.style.opacity = "0.7";
+    })
     span.innerText = text;
 
     li.appendChild(delBtn);
