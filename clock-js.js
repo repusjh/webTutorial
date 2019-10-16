@@ -1,5 +1,9 @@
 let clockContainer = document.querySelector(".js-clock"); //div
-let clockTitle = clockContainer.querySelector("h1"); //h1 in div
+let clockHour = clockContainer.querySelector(".hour");
+let clockMinutes = clockContainer.querySelector(".minutes");
+let clockColon = clockContainer.querySelector(".colon");
+
+let colon = true;
 
 function getTime(){
     const date = new Date();
@@ -7,7 +11,15 @@ function getTime(){
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
 
-    clockTitle.innerText = `${(hours < 10)? `0${hours}`:hours}:${(minutes < 10)? `0${minutes}`:minutes}:${(seconds < 10)? `0${seconds}`:seconds}`;
+    clockHour.innerText = `${(hours < 10)? `0${hours}`:hours}`;
+    if (!colon){
+        clockColon.style.visibility = 'hidden';
+        colon = true;
+    } else {
+        clockColon.style.visibility = 'visible';
+        colon = false;
+    }
+    clockMinutes.innerText = `${(minutes < 10)? `0${minutes}`:minutes}`;
 }
 
 function init(){
